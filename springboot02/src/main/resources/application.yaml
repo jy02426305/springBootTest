@@ -2,11 +2,14 @@ server:
   port: 8081
   servlet:
     context-path: /springboot02
+
 person:
   name: 张三
   age: 18
   maps: {math: 50,english: 100}
   list: [java,c#,sql]
   dog:
-    name: 旺财
-    age: 3
+    name: ${person.englishName}_dog
+    age: ${random.int[1,8]}
+  englishName: lucy
+  email: 88042711@qq.com

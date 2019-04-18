@@ -1,23 +1,17 @@
 package com.cyx.springboot.dto;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.Email;
 import java.util.List;
 import java.util.Map;
 
-@Component
 @ConfigurationProperties(prefix = "person")
-@Validated
-public class Person {
+public class Person3 {
     private String name;
     private int age;
     private Map<String,String> maps;
     private List<String> list;
     private String englishName;
-    @Email
     private String email;
 
     private Dog dog;
@@ -54,14 +48,6 @@ public class Person {
         this.list = list;
     }
 
-    public Dog getDog() {
-        return dog;
-    }
-
-    public void setDog(Dog dog) {
-        this.dog = dog;
-    }
-
     public String getEnglishName() {
         return englishName;
     }
@@ -78,9 +64,17 @@ public class Person {
         this.email = email;
     }
 
+    public Dog getDog() {
+        return dog;
+    }
+
+    public void setDog(Dog dog) {
+        this.dog = dog;
+    }
+
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person3{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", maps=" + maps +

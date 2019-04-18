@@ -1,5 +1,6 @@
 package com.cyx.springboot.dto;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
@@ -9,18 +10,25 @@ import java.util.List;
 import java.util.Map;
 
 @Component
-@ConfigurationProperties(prefix = "person")
 @Validated
-public class Person {
+public class Person1 {
+
+    @Value("${person.name}")
     private String name;
+    @Value("#{person.age*2}")
     private int age;
+    //@Value不支持复杂类型映射
     private Map<String,String> maps;
+
     private List<String> list;
+    @Value("${person.english-name}")
     private String englishName;
-    @Email
-    private String email;
 
     private Dog dog;
+
+    @Value("${person.email}")
+    //@Email  不支持校验
+    private String email;
 
     public String getName() {
         return name;
@@ -80,14 +88,14 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person1{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", maps=" + maps +
                 ", list=" + list +
                 ", englishName='" + englishName + '\'' +
-                ", email='" + email + '\'' +
                 ", dog=" + dog +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

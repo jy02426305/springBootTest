@@ -1,23 +1,21 @@
 package com.cyx.springboot.dto;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.Email;
 import java.util.List;
 import java.util.Map;
 
 @Component
-@ConfigurationProperties(prefix = "person")
-@Validated
-public class Person {
+@PropertySource(value={"classpath:person2.properties"})
+@ConfigurationProperties(prefix = "person2")
+public class Person2 {
     private String name;
     private int age;
     private Map<String,String> maps;
     private List<String> list;
     private String englishName;
-    @Email
     private String email;
 
     private Dog dog;
@@ -80,7 +78,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person2{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", maps=" + maps +
