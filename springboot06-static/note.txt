@@ -1,0 +1,8 @@
+1.静态资源映射：
+classpath:/static/  --推荐
+classpath:/resources/
+classpath:/META-INF/resources/
+classpath:/public/
+
+2.www.webjars.org 引入需要的webjars的maven包，访问路径：
+jquery为例：/webjars/jquery/1.11.3/jquery.js

@@ -1,0 +1,15 @@
+1.使用thymeleaf必须先引用maven包：
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+
+2.可以修改thymeleaf默认配置：
+例如：spring.thymeleaf.suffix
+
+3.thymeleaf的表达式，见官方文档。
+常用：
+${}
+${#{}}
+*{}
+[[${}]]  //不显示标签
