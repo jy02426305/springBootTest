@@ -1,0 +1,643 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="js/hexpand/css/style.css" rel="stylesheet" />
+    <link href="css/default.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/hexpand/js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row c-header" style="padding:18px 0 18px 0;">
+        <div class="container">
+            <div class="col-xs-10 c-nav">
+                <div class="col-xs-2 no-padding" style="line-height:160px;">
+                    <img src="images/logo.jpg" width="160" height="160" />
+                </div>
+                <div th:each="menu : ${menuList}" class="col-xs-2 no-padding text-center">
+                    <a th:href="@{${menu.url}}" th:text="${menu.name}" th:attr="data-createDate=${#dates.format(menu.createDate,'yyyy-MM-dd HH:mm:ss')}" class="colorfff"></a>
+                </div>
+                <!--<div class="col-xs-2 no-padding text-center">
+                    <a href="index" class="colorfff">首页</a>
+                </div>
+                <div class="col-xs-2 no-padding text-center">
+                    <a href="rebang">热榜</a>
+                </div>
+                <div class="col-xs-2 no-padding text-center">
+                    <a href="rencai">人才</a>
+                </div>
+                <div class="col-xs-2 no-padding text-center">
+                    <a href="zhiwei">职位</a>
+                </div>
+                <div class="col-xs-2 no-padding text-center">
+                    <a href="siyuzuoye">私域</a>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="banner">
+            <div class="container xue">
+                <img src="images/index-1.jpg" width="100%" />
+            </div>
+        </div>
+    </div>
+    <div class="row part1" style="background-color:#f4f4f4;">
+        <div class="container">
+            <div class="col-sm-12 text-center">
+                <img src="images/index-2.jpg" />
+            </div>
+            <div class="col-sm-12 no-padding">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding">
+                        <img src="images/list-1.jpg" width="100%" height="370" />
+                    </div>
+                    <div class="col-sm-12 text-center liangdian-text">
+                        22年及17年设计总监亲自教学
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding">
+                        <img src="images/list-2.jpg" width="100%" height="370" />
+                    </div>
+                    <div class="col-sm-12 text-center liangdian-text">
+                        针对“0基础”学员开设
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding">
+                        <img src="images/list-3.jpg" width="100%" height="370" />
+                    </div>
+                    <div class="col-sm-12 text-center liangdian-text">
+                        学习一种技能 胜任多种设计工作
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 no-padding m-t-lg">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding">
+                        <img src="images/list-4.jpg" width="100%" height="370" />
+                    </div>
+                    <div class="col-sm-12 text-center liangdian-text" style="padding-top:7px;">
+                        专业辅导团队<br />
+                        全天候线上线下一对一辅导
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding">
+                        <img src="images/list-5.jpg" width="100%" height="370" />
+                    </div>
+                    <div class="col-sm-12 text-center liangdian-text" style="padding-top:7px;">
+                        100%就业保障<br />
+                        学员参加工作才算真正毕业
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding">
+                        <img src="images/list-6.jpg" width="100%" height="370" />
+                    </div>
+                    <div class="col-sm-12 text-center liangdian-text" style="padding-top:7px;">
+                        100%实战教学<br />
+                        所有案例来自学员公司
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row part2">
+        <div class="container">
+            <div class="col-sm-12 text-center">
+                <img src="images/part2-title.jpg" />
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-1.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                大施 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text">
+                            <h4>从事设计及教学22年</h4>
+                            <span>优能设计教育创始人</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-2.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                美工头 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text">
+                            <h4>从事设计及教学17年</h4>
+                            <span>优能设计教育创始人</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:30px;">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-3.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                阿俊 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text" style="height:60px;">
+                            <span style="font-size:22px;">从事设计15年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-4.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                何源 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text" style="height:60px;">
+                            <span style="font-size:22px;">从事摄影11年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-5.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                阿菜 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text" style="height:60px;">
+                            <span style="font-size:22px;">从事设计13年</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12" style="margin-top:30px;">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-6.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                伟斌 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text" style="height:60px;">
+                            <span style="font-size:22px;">从事设计10年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-7.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                志彬 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text" style="height:60px;">
+                            <span style="font-size:22px;">从事设计10年</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 part2-item no-padding">
+                        <div class="col-sm-12 part2-header-bg">
+                            <div class="col-sm-12 text-center" style="margin-top:40px;">
+                                <img src="images/header-8.png" style="border-radius:87px;" />
+                            </div>
+                            <div class="col-sm-12 text-center part2-teacher">
+                                银子 老师
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center part2-text" style="height:60px;">
+                            <span style="font-size:22px;">从事设计4年</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row part3" style="background-color:#f4f4f4;">
+        <div class="container">
+            <div class="col-sm-12 text-center">
+                <img src="images/part3-title.png" />
+            </div>
+            <div class="col-sm-12 no-padding">
+                <div class="col-sm-6">
+                    <div class="col-sm-12 no-padding part3-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/7tian.jpg" width="100%" height="300" />
+                        </div>
+                        <div class="col-sm-12 text-center chengruo-text">
+                            任何学员入学前可选择免费试学7天<br />
+                            排除一切困扰满意后再交学费
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <div class="col-sm-12 no-padding part3-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/15tian.jpg" width="100%" height="300" />
+                        </div>
+                        <div class="col-sm-12 text-center chengruo-text">
+                            任何学员入学后15天，对教学不满意<br />
+                            我们将无条件退还全部费用
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 no-padding m-t-lg">
+                <div class="col-sm-6">
+                    <div class="col-sm-12 no-padding part3-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/chongxue.jpg" width="100%" height="300" />
+                        </div>
+                        <div class="col-sm-12 text-center chengruo-text">
+                            任何学员对自己的学习成绩不满意都可以提出<br />
+                            申请免费重学！不再收取任何费用
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="col-sm-12 no-padding part3-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/shengji.jpg" width="100%" height="300" />
+                        </div>
+                        <div class="col-sm-12 text-center chengruo-text">
+                            优能在每年的7-8月份都会对已经毕业学员进行免费升级<br />
+                            课程培训，任何学员都可以免费参加
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row part4">
+        <div class="container">
+            <div class="col-sm-12 text-center">
+                <img src="images/part4-title.jpg" />
+            </div>
+            <div class="col-sm-12 text-center">
+                <img src="images/part4-time.png" width="100%" />
+            </div>
+
+            <div class="col-sm-12 text-center" style="margin-top:70px;">
+                <img src="images/part4-step1.png" />
+            </div>
+            <div class="col-sm-12 m-t-md">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list1.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>Adobe Photoshop</h5>
+                            <p>专业图像处理软件、用于淘宝广告，网店平面制作，内容涵括ps工具箱、图层、图层样式、图层蒙版、通道、路径、滤镜、调色、知识高度归纳与总结.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list2.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>Adobe Illustrator</h5>
+                            <p>专业图像处理软件、用物淘宝广告，网店平面制作，内容涵AI工具箱、文字排版、图形应用与描绘知识高度归纳与总结.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list3.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>Adobe Dreamweaver</h5>
+                            <p>
+                                网页设计布局软件，网店装修必备，用代码的方式去自定
+                                义店铺页面，可简化页面代码，提高页面布局的准确度，
+                                完美 实现设计稿的内容.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center" style="margin-top:70px;">
+                <img src="images/part4-step2.png" />
+            </div>
+            <div class="col-sm-12 m-t-md">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list4.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>色彩构成</h5>
+                            <p>
+                                从专业角度帮你分析色彩在应用上几大关系，如何通过色
+                                彩实现店铺的整体氛围，一个好的色彩肯定是倍受关注，
+                                如果你过度的使用多种色彩，你的设计肯定杂乱无章。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list5.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>版式构成</h5>
+                            <p>
+                                版式构成主要分为两大部份，一是平面构成，二是立体构
+                                成。通过专业的训练可以帮你在瞬间获得灵感，让你在整
+                                体的设计中主次分明，留白空取，空间感营造等。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list6.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>文字图形构成</h5>
+                            <p>
+                                文字与图形的应用，在整体的设计应用中，是非常重要的
+                                课程，往往被很多教育机构忽略，一个好的文字排版更能
+                                够打动消费者，能更好的诠释品牌观！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center" style="margin-top:70px;">
+                <img src="images/part4-step3.png" />
+            </div>
+            <div class="col-sm-12 m-t-md">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list7.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>广告设计</h5>
+                            <p>
+                                课程内容包括：产品海报设计、活动促销海报设计、各活
+                                动主题设计，直通车广告设计，钻展广告设计、广告视觉
+                                优化、动画广告设计。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list8.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>详情页设计</h5>
+                            <p>
+                                课程内容包括：宝贝详情页规划及定位、详情页设计风格
+                                分析，产品卖点挖掘、情感营销设计、关联性营销布局，
+                                产品海报、模特展示、细节展示、保障性说明等。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list9.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>首页设计</h5>
+                            <p>
+                                课程内容包括：店铺整体规划与定位，设计风格分析，店
+                                招设计，导航条设计、焦点图设计、各销售模块设计、二
+                                级主题页面设计等课程。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-center" style="margin-top:70px;">
+                <img src="images/part4-step4.png" />
+            </div>
+            <div class="col-sm-12 m-t-md">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list10.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>PC端店铺代码装修</h5>
+                            <p>
+                                自定义店招、导航、自定义模块、页面布局、页面全屏代
+                                码、页面切片、pc端的各种特效、店铺后台的操作使用。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list11.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>手机端店铺装修</h5>
+                            <p>手机端基础版的装修及手机端智能版的装修与应用。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list12.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>详情页发布</h5>
+                            <p>
+                                详情页合理切片、详情页发布上传、淘宝助理使用、头图
+                                、手淘视频发布及详情页后台的设置。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-12 text-center" style="margin-top:70px;">
+                <img src="images/part4-step5.png" />
+            </div>
+            <div class="col-sm-12 m-t-md">
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list13.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>高级广告合成课程</h5>
+                            <p>
+                                本课程对于设计师来讲，内容安排上注重实际工作中的使
+                                用需求，突出“实用、易学”的特点，内容包含照片特效
+                                的基础和升级，超现实照片的合成、创意照片合成特效等
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list14.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>视频剪辑课程</h5>
+                            <p>
+                                2017年最新更新内容，课程内容主要针对电商60秒及头
+                                图9秒视频进行教学，主要以PR视频剪辑，视频特效及视
+                                频调色为主。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-sm-12 no-padding part4-item">
+                        <div class="col-sm-12 no-padding">
+                            <img src="images/part4-list15.jpg" width="100%" />
+                        </div>
+                        <div class="col-sm-12 kecheng-text">
+                            <h5>摄影课程</h5>
+                            <p>
+                                专业相机的基本参数设计，灯光的布局及产品的平铺与细
+                                节的拍摄展开学习。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row part5" style="background-color:#f4f4f4;">
+        <div class="container">
+            <div class="col-sm-12 text-center">
+                <img src="images/part5-title.png" />
+            </div>
+            <div class="col-sm-12 text-center m-t-xl">
+                <img src="images/part5-jieshao.png" />
+            </div>
+            <div class="col-sm-12 m-t-lg">
+                <img src="images/part5-content.jpg" width="100%" />
+            </div>
+            <div class="col-sm-12 m-t-xl part5-text">
+                <p>
+                    随着近些年电商行业的发展，互联网己成为最具前景的行业，目前除了天猫、淘宝、京东等
+                    大电商平台火热以外，其它的电商平台也在不断升温。优能的课程专门为互联网行业图像设计服务的解决方
+                    案，跟优能学设计，你不仅会做电商设计，你还可以胜任更多互联网相关的设计工作，多种职业方向发展。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row part6">
+        <div class="container">
+            <div class="col-sm-12">
+                <div class="col-sm-12 text-center">
+                    <img src="images/part6-title.png" />
+                </div>
+                <div class="col-sm-12 text-center m-t-lg">
+                    <img src="images/part6-jieshao.png" />
+                </div>
+                <div class="col-sm-12 text-center m-t-lg">
+                    <img src="images/part6-now.png" />
+                </div>
+                <div class="col-sm-12 m-t-lg">
+                    <div class="col-sm-4">
+                        <div class="col-sm-12 no-padding part6-item">
+                            <div class="col-sm-12 text-center m-t-xl">
+                                <img src="images/lianxi1.jpg" width="214" height="214" />
+                            </div>
+                            <div class="col-sm-12 text-center part6-text">
+                                <span class="block">小施老师(石狮美工头)</span>
+                                <p class="block">
+                                    腾讯QQ: 124474856<br />
+                                    电话&微信: 139 0507 0709
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-12 no-padding part6-item">
+                            <div class="col-sm-12 text-center m-t-xl">
+                                <img src="images/lianxi2.jpg" width="214" height="214" />
+                            </div>
+                            <div class="col-sm-12 text-center part6-text">
+                                <span class="block">大施老师(设计总监)</span>
+                                <p class="block">
+                                    腾讯QQ: 158171554<br />
+                                    电话&微信: 188 599 18599
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-12 no-padding part6-item">
+                            <div class="col-sm-12 text-center m-t-xl">
+                                <img src="images/lianxi3.jpg" width="214" height="214" />
+                            </div>
+                            <div class="col-sm-12 text-center part6-text">
+                                <span class="block">阿菜老师</span>
+                                <p class="block">
+                                    腾讯QQ: 4086 48582<br />
+                                    电话&微信: 150 597 17961
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 text-center  m-t-lg address">
+                <p>
+                    地址：[[${province}]] 石狮市 子芳路 曾坑段35号2-4楼（曾坑卫生所服务站楼上）<br />
+                    <img src="images/mao.png">&nbsp;添加老师微信  索要共享位置
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
