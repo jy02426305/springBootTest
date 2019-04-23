@@ -632,8 +632,8 @@
                 </div>
             </div>
             <div class="col-sm-12 text-center  m-t-lg address">
-                <p>
-                    地址：[[${province}]] 石狮市 子芳路 曾坑段35号2-4楼（曾坑卫生所服务站楼上）<br />
+                <p th:object="${address}">
+                    地址：[[*{province}]] [[*{city}]] [[*{district}]] 曾坑段35号2-4楼（曾坑卫生所服务站楼上）<br />
                     <img src="images/mao.png">&nbsp;添加老师微信  索要共享位置
                 </p>
             </div>
