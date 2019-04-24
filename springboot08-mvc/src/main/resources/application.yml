@@ -1,0 +1,13 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  thymeleaf:
+    suffix: .html
+  mvc:
+    date-format: yyyy-MM-dd HH:mm
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true

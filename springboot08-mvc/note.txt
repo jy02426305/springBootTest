@@ -1,0 +1,2 @@
+1.mvc拓展：
+    实现addViewControllers，省去写跳转页面的controller方法
