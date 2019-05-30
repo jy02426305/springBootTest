@@ -1,0 +1,5 @@
+server:
+  port: 4343
+spring:
+  application:
+    name: swagger-pratice

@@ -1,0 +1,8 @@
+server:
+  port: 2121
+spring:
+  freemarker:
+    request-context-attribute: request
+    charset: UTF-8
+    template-loader-path: classpath:/templates
+    suffix: .html
