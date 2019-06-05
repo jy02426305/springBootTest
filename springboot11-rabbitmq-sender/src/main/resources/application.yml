@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: rabbitmq-sender-direct
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: cyx
+    password: 123456
+server:
+  port: 8033
