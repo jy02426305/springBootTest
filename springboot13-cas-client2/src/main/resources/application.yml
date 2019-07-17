@@ -1,0 +1,7 @@
+server:
+  port: 5443
+cas:
+  server-url-prefix: http://localhost:8080/cas
+  server-login-url: http://localhost:8080/cas/login
+  client-host-url: http://localhost:5443
+  validation-type: cas
