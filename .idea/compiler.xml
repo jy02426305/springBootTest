@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot01" />
+        <module name="springboot09" />
+        <module name="springboot14-rabbitmq" />
         <module name="springboot02" />
-        <module name="springBootTest" />
+        <module name="springboot01" />
+        <module name="springboot15-rabbitmq" />
+        <module name="springboot11-rabbitmq-sender" />
       </profile>
     </annotationProcessing>
   </component>
@@ -17,6 +20,10 @@
       <module name="springBootTest" options="-parameters" />
       <module name="springboot01" options="-parameters" />
       <module name="springboot02" options="-parameters" />
+      <module name="springboot09" options="-parameters" />
+      <module name="springboot11-rabbitmq-sender" options="-parameters" />
+      <module name="springboot14-rabbitmq" options="-parameters" />
+      <module name="springboot15-rabbitmq" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,0 +1,33 @@
+server:
+  port: 5187
+spring:
+  #给项目来个名字
+  application:
+    name: rabbitmq-provider
+  #配置rabbitMq 服务器
+  rabbitmq:
+    addresses: 127.0.0.1
+    port: 5672
+    username: admin
+    password: 123456
+    virtual-host: testHost
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      retry:
+        enabled: true
+      mandatory: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+        #并发消费者初始化值
+        concurrency: 10
+        #并发消费者的最大值
+        max-concurrency: 20
+        #每个消费者每次监听时可拉取处理的消息数量
+        prefetch: 5
+      direct:
+        acknowledge-mode: manual
+#        retry:
+#          enabled: true
+#          max-attempts: 1

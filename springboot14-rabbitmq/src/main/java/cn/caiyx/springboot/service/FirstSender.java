@@ -1,6 +1,6 @@
-package cn.cyx.springboot.service;
+package cn.caiyx.springboot.service;
 
-import cn.cyx.springboot.config.RabbitMqConfig;
+import cn.caiyx.springboot.config.RabbitMqConfig;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class FirstSender {
      */
     public void send(String uuid,Object message) {
         CorrelationData correlationId = new CorrelationData(uuid);
-        rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, RabbitMqConfig.ROUTINGKEY1,
+        rabbitTemplate.convertAndSend(RabbitMqConfig.EXCHANGE, RabbitMqConfig.ROUTINGKEY2,
                 message, correlationId);
     }
 }
