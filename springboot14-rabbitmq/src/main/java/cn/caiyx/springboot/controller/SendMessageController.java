@@ -1,8 +1,6 @@
 package cn.caiyx.springboot.controller;
 
-import cn.caiyx.springboot.service.FirstSender;
-import org.springframework.amqp.rabbit.connection.CorrelationData;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import cn.caiyx.springboot.callback.HelloSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,12 +31,11 @@ public class SendMessageController {
 //    }
 
     @Autowired
-    private FirstSender firstSender;
+    private HelloSender helloSender;
 
     @GetMapping("/send")
-    public String send(String message){
-        String uuid = UUID.randomUUID().toString();
-        firstSender.send(uuid,message);
-        return uuid;
+    public String send(){
+        helloSender.send();
+        return "ok";
     }
 }

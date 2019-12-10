@@ -1,10 +1,7 @@
 package cn.caiyx.springboot.controller;
 
 import cn.caiyx.springboot.entity.DsMember;
-import cn.caiyx.springboot.rabbitmq.MemberSender;
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONPath;
-import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,14 +24,19 @@ public class SendMessageController {
     @Autowired
     RabbitTemplate rabbitTemplate;  //使用RabbitTemplate,这提供了接收/发送等等方法
 
-    @Autowired
-    private MemberSender memberSender;
-
-    @GetMapping(value = "/memberSender")
-    public String memberSender(){
-        memberSender.send();
+    @GetMapping(value = "/memberSend")
+    public String memberSend(){
+        String messageId = String.valueOf(UUID.randomUUID());
+        System.out.println("消息编号："+messageId);
+        CorrelationData correlationData=new CorrelationData();
+        correlationData.setId(messageId);
+        DsMember dsMember=new DsMember();
+        dsMember.setMemberId(1);
+        dsMember.setFullName("张三");
+        rabbitTemplate.convertAndSend("direct_exchange","saveMember", JSON.toJSONString(dsMember),correlationData);
         return "ok";
     }
+
 
     @GetMapping("/sendDirectMessage")
     public String sendDirectMessage() {
